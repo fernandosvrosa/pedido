@@ -2,7 +2,7 @@
   "name": "pedido",
   "version": "1.0.0",
   "description": "Projeto para estudo de MEAN",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
