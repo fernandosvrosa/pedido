@@ -2,10 +2,11 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes');
+var pedidoRoute = require('./routes/pedido.js');
 
 var app = express();
 
+// pasta onde fica as views
 app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'ejs');
 
@@ -17,8 +18,9 @@ app.use(bodyParser.urlencoded({
  // compartilha a pasta public
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.index);
-app.get('/pedido', routes.pedidoList);
+// rotas para acesso aqui
+app.get('/', pedidoRoute.index);
+app.get('/pedido', pedidoRoute.pedidoList);
 
 app.set('port', process.env.PORT || 3000);
 
