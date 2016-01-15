@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
+app.get('/pedido', routes.pedidoList);
 
 app.set('port', process.env.PORT || 3000);
 
