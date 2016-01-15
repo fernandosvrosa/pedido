@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 
+var homeRoute = require('./routes/home.js');
 var pedidoRoute = require('./routes/pedido.js');
 
 var app = express();
@@ -19,7 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 
 // rotas para acesso aqui
-app.get('/', pedidoRoute.index);
+app.get('/', homeRoute.index);
 app.get('/pedido', pedidoRoute.pedidoList);
 
 app.set('port', process.env.PORT || 3000);
