@@ -6,7 +6,7 @@ angular.module('pedido')
       $scope.pedidos = [];
 
       $http.get('/pedido')
-      .success(function(pedidos){
-        $scope.pedidos = pedidos;
+      .success(function(retorno){
+        $scope.pedidos = retorno.pedidos;
       })
 });
