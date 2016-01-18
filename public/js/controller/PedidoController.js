@@ -5,7 +5,7 @@ angular.module('pedido')
 
       $scope.pedidos = [];
 
-      $http.get('/pedido')
+      $http.get('/v1/pedido')
       .success(function(retorno){
         $scope.pedidos = retorno.pedidos;
       })

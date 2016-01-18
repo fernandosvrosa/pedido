@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // rotas para acesso aqui
 app.get('/', homeRoute.index);
-app.get('/pedido', pedidoRoute.pedidoList);
+app.get('/v1/pedido', pedidoRoute.pedidoList);
 
 app.set('port', process.env.PORT || 3000);
 
