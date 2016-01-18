@@ -1,13 +1,18 @@
-angular.module('pedido', ['ngRoute'])
-.config(function($routeProvider, $locationProvider){
+angular.module('pedido', ['ngRoute', 'services'])
+.config(function($routeProvider){
 
-    $locationProvider.html5Mode(true);
+  //  $locationProvider.html5Mode(true);
 
     $routeProvider.when('/', {
         templateUrl: 'partials/principal.ejs',
-        controller: 'PedidosController'
+        controller: 'PedidoController'
     });
 
-    $routeProvider.otherwise({redirectTo : '/'})
+    $routeProvider.when('/preco/:empresaId', {
+        templateUrl: 'partials/preco.ejs',
+        controller: 'PrecoController'
+    });
+
+    $routeProvider.otherwise({redirectTo : '/'});
 
 });

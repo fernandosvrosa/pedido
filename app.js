@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 var homeRoute = require('./routes/home.js');
 var pedidoRoute = require('./routes/pedido.js');
+var precoRoute = require('./routes/preco.js');
 
 var app = express();
 
@@ -22,6 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // rotas para acesso aqui
 app.get('/', homeRoute.index);
 app.get('/v1/pedido', pedidoRoute.pedidoList);
+app.get('/v1/preco/empresa/:empresaId', precoRoute.listarPrecosPorEmpresaId);
+
+
 
 app.set('port', process.env.PORT || 3000);
 

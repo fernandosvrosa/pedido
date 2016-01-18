@@ -1,12 +1,12 @@
 angular.module('pedido')
-    .controller('PedidosController', function($http, $scope) {
+    .controller('PedidoController', function($scope, recursoPedido) {
 
       $scope.nomePedido = "";
-
       $scope.pedidos = [];
 
-      $http.get('/v1/pedido')
-      .success(function(retorno){
-        $scope.pedidos = retorno.pedidos;
-      })
+      recursoPedido.get(function(retorno){
+           $scope.pedidos = retorno.pedidos;
+      }, function(erro){
+           console.log(erro);
+      });
 });
