@@ -13,6 +13,11 @@ angular.module('pedido', ['ngRoute', 'services'])
         controller: 'PrecoController'
     });
 
+    $routeProvider.when('/user/new', {
+        templateUrl: 'partials/user.ejs',
+        controller: 'UserController'
+    });
+
     $routeProvider.otherwise({redirectTo : '/'});
 
 });

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('pedido')
     .controller('PedidoController', function($scope, recursoPedido) {
 

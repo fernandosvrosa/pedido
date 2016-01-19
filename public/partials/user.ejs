@@ -1,0 +1,32 @@
+<div class="jumbotron">
+   <h1 class="text-center">Listar Usuários</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{preco.Produto.nome}}</td>
+      <td>{{preco.preco}}</td>
+      <td>
+        <button type="button" class="btn btn-primary">Atualizar</button>
+        <button type="button" class="btn btn-danger">Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="col-md-6">
+  <div class="form-group">
+    <button type="button" class="btn btn-primary">Incluir</button>
+    <a href="/#/" class="btn btn-default">Voltar</a>
+  </div>
+</div>

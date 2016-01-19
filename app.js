@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var homeRoute = require('./routes/home.js');
 var pedidoRoute = require('./routes/pedido.js');
 var precoRoute = require('./routes/preco.js');
+var userRoute = require('./routes/user.js');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', homeRoute.index);
 app.get('/v1/pedido', pedidoRoute.pedidoList);
 app.get('/v1/preco/empresa/:empresaId', precoRoute.listarPrecosPorEmpresaId);
+app.post('/v1/user/new', userRoute.new);
 
 
 
@@ -32,3 +34,5 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function(){
     console.log('Servidor foi startado na porta ' + server.address().port);
 });
+
+module.exports = app;

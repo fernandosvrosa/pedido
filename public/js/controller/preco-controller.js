@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('pedido')
 .controller('PrecoController', function($scope, $routeParams, recursoPrecoEmpresa){
   $scope.precosEmpresa = [];

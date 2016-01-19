@@ -1,4 +1,3 @@
-
 exports.listarPrecosPorEmpresaId = function(req, res){
     var id = req.params.empresaId;
     var precos = [];
